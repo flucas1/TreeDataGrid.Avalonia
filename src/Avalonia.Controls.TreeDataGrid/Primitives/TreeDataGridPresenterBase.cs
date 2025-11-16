@@ -309,6 +309,9 @@ namespace Avalonia.Controls.Primitives
                 _realizedElements ??= new();
                 _measureElements ??= new();
 
+                // We need to set the lastEstimatedElementSizeU before calling CalculateDesiredSize()
+                _ = EstimateElementSizeU();
+
                 // We handle horizontal and vertical layouts here so X and Y are abstracted to:
                 // - Horizontal layouts: U = horizontal, V = vertical
                 // - Vertical layouts: U = vertical, V = horizontal
