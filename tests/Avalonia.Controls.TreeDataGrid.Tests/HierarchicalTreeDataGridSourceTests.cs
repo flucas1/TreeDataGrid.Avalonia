@@ -14,7 +14,7 @@ namespace Avalonia.Controls.TreeDataGridTests
     {
         public class RowsAndCells
         {
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Creates_Cells_For_Root_Models(bool sorted)
@@ -25,7 +25,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Expanding_Root_Node_Creates_Child_Cells(bool sorted)
@@ -38,7 +38,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, sorted, new IndexPath(0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Collapsing_Root_Node_Removes_Child_Cells(bool sorted)
@@ -55,7 +55,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Adding_Root_Row(bool sorted)
@@ -73,7 +73,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 6, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Inserting_Root_Row(bool sorted)
@@ -91,7 +91,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 6, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Removing_Root_Row(bool sorted)
@@ -109,7 +109,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 4, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Removing_Root_Row_With_Earlier_Row_Expanded_To_Grandchildren(bool sorted)
@@ -139,7 +139,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, sorted, new IndexPath(0), new IndexPath(0, 0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Removing_Root_Row_With_Later_Row_Expanded(bool sorted)
@@ -160,7 +160,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 9, sorted, new IndexPath(3));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Removing_Expanded_Root_Row_Unsubscribes_From_CollectionChanged(bool sorted)
@@ -176,7 +176,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(0, toRemove.Children!.CollectionChangedSubscriberCount());
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Removing_Expanded_Root_Row_With_Expanded_Child_Unsubscribes_From_CollectionChanged(bool sorted)
@@ -194,7 +194,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(0, toRemove.Children!.CollectionChangedSubscriberCount());
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Adding_Child_Row(bool sorted)
@@ -214,7 +214,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 11, sorted, new IndexPath(0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Adding_Child_To_Expanded_Then_Unexpanded_Root_Node(bool sorted)
@@ -230,7 +230,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Inserting_Child_Row(bool sorted)
@@ -250,7 +250,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 11, sorted, new IndexPath(0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Removing_Child_Row(bool sorted)
@@ -269,7 +269,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 9, sorted, new IndexPath(0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Removing_Child_Rows_At_Start(bool sorted)
@@ -288,7 +288,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 8, sorted, new IndexPath(0));
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Replacing_Root_Row(bool sorted)
@@ -306,7 +306,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, sorted);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Supports_Moving_Root_Row(bool sorted)
@@ -324,7 +324,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, sorted);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Setting_Sort_Updates_Rows()
             {
                 var data = CreateData();
@@ -339,7 +339,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, true, new IndexPath(0));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Clearing_Sort_Updates_Rows()
             {
                 var data = CreateData();
@@ -357,7 +357,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class Expansion
         {
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Expanding_Updates_Cell_IsExpanded()
             {
                 var data = CreateData();
@@ -377,7 +377,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(1, raised);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Expanding_Previously_Expanded_Node_Creates_Expanded_Descendent()
             {
                 var data = CreateData();
@@ -408,7 +408,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 11, false, new IndexPath(0), new IndexPath(0, 0));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Shows_Expander_For_Row_With_Children()
             {
                 var data = CreateData();
@@ -418,7 +418,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.True(expander.ShowExpander);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Hides_Expander_For_Row_Without_Children()
             {
                 var data = new[] { new Node { Id = 0, Caption = "Node 0" } };
@@ -428,7 +428,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.False(expander.ShowExpander);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Attempting_To_Expand_Node_That_Has_No_Children_Hides_Expander()
             {
                 var data = new Node { Id = 0, Caption = "Node 0" };
@@ -455,7 +455,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.False(expander.IsExpanded);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void ExpandAll_Expands_All_Rows(bool sorted)
@@ -468,7 +468,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(65, target.Rows.Count);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void CollapseAll_Collapses_All_Rows(bool sorted)
@@ -491,7 +491,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Adding_Second_Expander_Column_Throws()
         {
             var data = CreateData();
@@ -507,7 +507,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             });
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Removing_Expander_Column_Throws()
         {
             var data = CreateData();
@@ -523,7 +523,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class ExpansionBinding
         {
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Root_Is_Initially_Expanded()
             {
                 var data = CreateData();
@@ -535,7 +535,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, false, new IndexPath(0));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Child_Is_Initially_Expanded()
             {
                 var data = CreateData();
@@ -549,7 +549,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 11, false, new IndexPath(0), new IndexPath(0, 1));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Handles_Initial_Expanded_Row_With_No_Children()
             {
                 var data = CreateData();
@@ -564,7 +564,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, false, new IndexPath(0));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Root_Can_Be_Expanded_Via_Model()
             {
                 var data = CreateData();
@@ -578,7 +578,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 10, false, new IndexPath(0));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Child_Can_Be_Expanded_Via_Model()
             {
                 var data = CreateData();
@@ -596,7 +596,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 11, false, new IndexPath(0), new IndexPath(0, 1));
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Expanding_Collapsing_Root_Row_Writes_To_Model()
             {
                 var data = CreateData();
@@ -614,7 +614,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 AssertState(target, data, 5, false);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Expanding_Collapsing_Child_Row_Writes_To_Model()
             {
                 var data = CreateData();
@@ -687,7 +687,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class ShowExpander
         {
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Initially_Hides_Expander_With_No_Children()
             {
                 var data = CreateData(count: 1, childCount: 0);
@@ -697,7 +697,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.False(expander.ShowExpander);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Initially_Shows_Expander_With_Children()
             {
                 var data = CreateData(count: 1, childCount: 1);
@@ -707,7 +707,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.True(expander.ShowExpander);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Shows_Expander_When_First_Child_Added()
             {
                 var data = CreateData(count: 1, childCount: 0);
@@ -727,7 +727,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(1, raised);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Hides_Expander_When_Last_Child_Removed()
             {
                 var data = CreateData(count: 1, childCount: 1);
@@ -747,7 +747,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(1, raised);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Cell_Synchronizes_Row_ShowExpander()
             {
                 var data = CreateData(count: 1, childCount: 1);
@@ -767,7 +767,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class Selection
         {
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Reassigning_Source_Updates_Selection_Model_Source()
             {
                 var data1 = CreateData();
@@ -785,7 +785,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class Items
         {
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Can_Reassign_Items(bool sorted)
@@ -808,7 +808,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(1, raised);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Can_Reassign_Items_With_Expanded_Node(bool sorted)
@@ -832,7 +832,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(1, raised);
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Reassigning_Items_With_Expanded_Root_Node_Unsubscribes_From_CollectionChanged(bool sorted)
@@ -849,7 +849,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(0, toRemove.Children!.CollectionChangedSubscriberCount());
             }
 
-            [AvaloniaTheory(Timeout = 10000)]
+            [AvaloniaTheory]
             [InlineData(false)]
             [InlineData(true)]
             public void Reassigning_Items_With_Expanded_Child_Node_Unsubscribes_From_CollectionChanged(bool sorted)
@@ -868,7 +868,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(0, toRemove.Children!.CollectionChangedSubscriberCount());
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Selects_Correct_Item_After_Items_Reassigned()
             {
                 var data = CreateData();

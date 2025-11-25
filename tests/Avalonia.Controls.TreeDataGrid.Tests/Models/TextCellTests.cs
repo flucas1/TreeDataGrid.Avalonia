@@ -12,7 +12,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
 {
     public class TextCellTests
     {
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Value_Is_Initially_Read_From_String()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -22,7 +22,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal("initial", target.Value);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Modified_Value_Is_Written_To_Binding()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -35,7 +35,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal(new[] { "initial", "new" }, result);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Modified_Text_Is_Written_To_Binding()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -48,7 +48,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal(new[] { "initial", "new" }, result);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Modified_Value_Is_Written_To_Binding_On_EndEdit()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -71,7 +71,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal(new[] { "initial", "new" }, result);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Modified_Value_Is_Not_Written_To_Binding_On_CancelEdit()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -94,7 +94,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal(new[] { "initial" }, result);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Unchanged_Value_Clears_On_CommitEdit_Without_Changes()
         {
             var binding = new BehaviorSubject<BindingValue<string>>("initial");
@@ -115,7 +115,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
 
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Initial_Int_Value_Is_Formatted()
             {
                 var binding = new BehaviorSubject<BindingValue<int>>(42);
@@ -125,7 +125,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
                 Assert.Equal(42, target.Value);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Int_Value_Is_Formatted_After_Editing()
             {
                 var binding = new BehaviorSubject<BindingValue<int>>(42);

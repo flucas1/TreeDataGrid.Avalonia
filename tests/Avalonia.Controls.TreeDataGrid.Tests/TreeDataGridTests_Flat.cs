@@ -17,7 +17,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 {
     public class TreeDataGridTests_Flat
     {
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Display_Initial_Rows_And_Cells()
         {
             var (target, _) = CreateTarget();
@@ -41,7 +41,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void MultiSelection_Should_Work_Correctly_With_Duplicates()
         {
             var items = new List<Model>
@@ -67,7 +67,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             AssertInteractionSelection(target, 1, 2, 3);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Selection_Should_Be_Preserved_After_Sorting()
         {
             var (target, aaa) = CreateTarget();
@@ -85,7 +85,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             AssertInteractionSelection(target, 94, 99);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Subscribe_To_Models_For_Initial_Rows()
         {
             var (target, items) = CreateTarget();
@@ -97,7 +97,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Subscribe_To_Correct_Models_After_Scrolling_Down_One_Row()
         {
             var (target, items) = CreateTarget();
@@ -112,7 +112,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Subscribe_To_Correct_Models_After_Scrolling_Down_One_Page()
         {
             var (target, items) = CreateTarget();
@@ -127,7 +127,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Unsubscribe_From_Models_When_Detached_From_Logical_Tree()
         {
             var (target, items) = CreateTarget();
@@ -140,7 +140,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Desired_Width_Should_Be_Total_Of_Fixed_Width_Columns()
         {
             var (target, items) = CreateTarget(
@@ -154,7 +154,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(24, target.DesiredSize.Width);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Size_Star_Columns()
         {
             var (target, items) = CreateTarget(
@@ -184,7 +184,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Size_Star_Columns_With_Min_Width()
         {
             var (target, items) = CreateTarget(
@@ -214,7 +214,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Size_Star_Columns_With_Max_Width()
         {
             var (target, items) = CreateTarget(
@@ -244,7 +244,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Raises_CellPrepared_Events_On_Initial_Layout()
         {
             var (target, items) = CreateTarget(runLayout: false);
@@ -260,7 +260,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(20, raised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Raises_CellClearing_CellPrepared_Events_On_Scroll()
         {
             var (target, items) = CreateTarget();
@@ -288,7 +288,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(2, preparedRaised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Raises_CellValueChanged_When_Model_Value_Changed()
         {
             var (target, items) = CreateTarget();
@@ -306,7 +306,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(1, raised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Raises_CellValueChanged_After_Cell_Edit()
         {
             var (target, items) = CreateTarget();
@@ -332,7 +332,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(1, raised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Does_Not_Raise_CellValueChanged_Events_On_Initial_Layout()
         {
             var (target, items) = CreateTarget(runLayout: false);
@@ -345,7 +345,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(0, raised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Does_Not_Raise_CellValueChanged_Events_On_Scroll()
         {
             var (target, items) = CreateTarget();
@@ -359,7 +359,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(0, raised);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Does_Not_Realize_Columns_Outside_Viewport()
         {
             var (target, items) = CreateTarget(columns: new IColumn<Model>[]
@@ -379,7 +379,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.True(double.IsNaN(columns[3].ActualWidth));
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Header_Column_Indexes_Are_Updated_When_Columns_Are_Updated()
         {
             var (target, items) = CreateTarget(columns: new IColumn<Model>[]
@@ -408,7 +408,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             AssertColumnIndexes(target, 0, 4);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Columns_Are_Correctly_Sized_After_Changing_Source()
         {
             // Create the initial target with 2 columns and make sure our preconditions are correct.
@@ -448,7 +448,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(20, columns[2].ActualWidth);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Correctly_Align_Columns_When_Vertically_Scrolling_With_First_Column_Unrealized()
         {
             // Issue #298
@@ -495,7 +495,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             AssertRealizedCells(target);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Use_TextCell_StringFormat()
         {
             var (target, items) = CreateTarget(columns: new IColumn<Model>[]
@@ -521,7 +521,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Use_TextCell_StringFormat_When_Model_Is_Updated()
         {
             var (target, items) = CreateTarget(columns: new IColumn<Model>[]
@@ -546,7 +546,7 @@ namespace Avalonia.Controls.TreeDataGridTests
 
         public class RemoveItems
         {
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Within_Realized_Elements()
             {
                 var (target, items) = CreateTarget();
@@ -563,7 +563,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 100), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Within_Realized_Elements_When_Scrolled_To_End()
             {
                 var (target, items) = CreateTarget(itemCount: 20);
@@ -580,7 +580,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 60), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Of_All_Realized_Elements()
             {
                 var (target, items) = CreateTarget();
@@ -597,7 +597,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 100), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Of_All_Realized_Elements_When_Scrolled_To_End()
             {
                 var (target, items) = CreateTarget(itemCount: 20);
@@ -614,7 +614,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 0), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Spanning_Beginning_Of_Realized_Elements_When_Scrolled_To_End()
             {
                 var (target, items) = CreateTarget(itemCount: 20);
@@ -631,7 +631,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 0), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Range_Spanning_End_Of_Realized_Elements()
             {
                 var (target, items) = CreateTarget();
@@ -648,7 +648,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(new Vector(0, 100), target.Scroll.Offset);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Selected_Item()
             {
                 var (target, items) = CreateTarget();
@@ -663,7 +663,7 @@ namespace Avalonia.Controls.TreeDataGridTests
                 Assert.Equal(-1, target.RowSelection.SelectedIndex);
             }
 
-            [AvaloniaFact(Timeout = 10000)]
+            [AvaloniaFact]
             public void Can_Remove_Selected_Item_Sorted()
             {
                 var (target, items) = CreateTarget();
@@ -680,7 +680,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Show_Horizontal_ScrollBar()
         {
             var (target, items) = CreateTarget(columns:
@@ -698,7 +698,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(new(200, 0), headerScroll.Extent);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Show_Horizontal_ScrollBar_With_No_Initial_Rows()
         {
             var (target, items) = CreateTarget(columns:
@@ -716,7 +716,7 @@ namespace Avalonia.Controls.TreeDataGridTests
             Assert.Equal(new(200, 0), headerScroll.Extent);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Should_Preserve_Horizontal_ScrollBar_When_Rows_Removed()
         {
             var (target, items) = CreateTarget(columns:

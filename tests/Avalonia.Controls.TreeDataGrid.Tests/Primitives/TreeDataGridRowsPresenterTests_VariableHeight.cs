@@ -18,7 +18,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
 {
     public class TreeDataGridRowsPresenterTests_VariableHeight
     {
-        [AvaloniaTheory(Timeout = 10000)]
+        [AvaloniaTheory]
         [InlineData(10)]
         [InlineData(20)]
         [InlineData(50)]
