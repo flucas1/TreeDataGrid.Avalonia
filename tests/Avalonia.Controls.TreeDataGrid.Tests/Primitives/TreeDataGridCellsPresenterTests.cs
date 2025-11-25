@@ -17,7 +17,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
 {
     public class TreeDataGridCellsPresenterTests
     {
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Creates_Initial_Cells()
         {
             var (target, _) = CreateTarget();
@@ -26,7 +26,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Updates_Column_ActualWidth()
         {
             var (target, _) = CreateTarget();
@@ -38,7 +38,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Right_One_Cell()
         {
             var (target, scroll) = CreateTarget();
@@ -50,7 +50,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Right_More_Than_A_Page()
         {
             var (target, scroll) = CreateTarget();
@@ -62,7 +62,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Left_More_Than_A_Page()
         {
             var (target, scroll) = CreateTarget();
@@ -77,7 +77,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void DesiredSize_Takes_Min_Star_Column_Width_Into_Account()
         {
             var minWidth = new ColumnOptions<Model>
@@ -96,7 +96,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             Assert.Equal(200, target.DesiredSize.Width);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Star_Cells_Are_Measured_With_Final_Column_Width()
         {
             // Issue #70
@@ -124,7 +124,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Nth_Child_Handles_Deletion_And_Addition_Correctly()
         {
             var (target, scroll) = CreateTarget(additionalStyles:

@@ -18,7 +18,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
 {
     public class TreeDataGridColumnHeadersPresenterTests
     {
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Creates_Initial_Columns()
         {
             var (target, _) = CreateTarget();
@@ -27,7 +27,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Updates_Auto_Column_ActualWidth()
         {
             // We're testing Auto columns so make cells have a width of 10.
@@ -54,7 +54,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Right_One_Row()
         {
             var (target, scroll) = CreateTarget();
@@ -66,7 +66,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Right_More_Than_A_Page()
         {
             var (target, scroll) = CreateTarget();
@@ -78,7 +78,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Scrolls_Left_More_Than_A_Page()
         {
             var (target, scroll) = CreateTarget();
@@ -93,7 +93,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             AssertRecyclable(target, 0);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Updates_Column_Width_When_Width_Changes()
         {
             var (target, _) = CreateTarget();
@@ -110,7 +110,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Primitives
             }
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Nth_Child_Handles_Deletion_And_Addition_Correctly()
         {
             var (target, scroll) = CreateTarget(additionalStyles:

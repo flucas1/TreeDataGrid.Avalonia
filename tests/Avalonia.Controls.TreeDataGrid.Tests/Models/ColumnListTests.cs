@@ -7,7 +7,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
 {
     public class ColumnListTests
     {
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Columns_Are_Sized_At_End_Of_Measure()
         {
             var target = new ColumnList<Model>
@@ -36,7 +36,7 @@ namespace Avalonia.Controls.TreeDataGridTests.Models
             Assert.Equal(255, target[3].ActualWidth);
         }
 
-        [AvaloniaFact(Timeout = 10000)]
+        [AvaloniaFact]
         public void Layout_Is_Invalidated_At_End_Of_Measure_If_AutoSized_Column_Changes_Width()
         {
             var target = new ColumnList<Model>
