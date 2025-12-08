@@ -44,6 +44,8 @@ namespace TreeDataGridDemo.ViewModels
             try
             {
                 var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("User-Agent", nameof(TreeDataGridDemo));
+
                 var d = DateTimeOffset.Now.Day;
                 var m = DateTimeOffset.Now.Month;
                 var uri = $"https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{m:00}/{d:00}";
