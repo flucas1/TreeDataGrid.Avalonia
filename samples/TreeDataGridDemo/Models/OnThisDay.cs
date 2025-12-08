@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
+﻿using System.IO;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Avalonia.Controls.Models;
 using Avalonia.Media.Imaging;
+using TreeDataGridDemo.Utils;
 
 namespace TreeDataGridDemo.Models
 {
@@ -22,10 +18,8 @@ namespace TreeDataGridDemo.Models
         public OnThisDayArticle[]? Pages { get; set; }
     }
 
-    internal class OnThisDayArticle : NotifyingBase
+    internal class OnThisDayArticle
     {
-        private const string UserAgent = @"AvaloniaTreeDataGridSample/1.0 (https://avaloniaui.net; team@avaloniaui.net)";
-        private bool _loadedImage;
         private Bitmap? _image;
 
         public string? Type { get; set; }
@@ -34,38 +28,22 @@ namespace TreeDataGridDemo.Models
         public string? Description { get; set; }
         public string? Extract { get; set; }
 
-        public Bitmap? Image
+        [JsonIgnore]
+        public Task<Bitmap?> Image => GetImageAsync();
+
+        private async Task<Bitmap?> GetImageAsync() => _image ??= await LoadImageAsync();
+
+        private async Task<Bitmap?> LoadImageAsync()
         {
-            get
-            {
-                if (_image is null && !_loadedImage)
-                {
-                    _ = LoadImageAsync();
-                }
-
-                return _image;
-            }
-            private set => RaiseAndSetIfChanged(ref _image, value);
-        }
-
-        private async Task LoadImageAsync()
-        {
-            _loadedImage = true;
-
             if (Thumbnail?.Source is null)
-                return;
+                return null;
 
-            try
-            {
-                // Load the image from the url.
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.UserAgent.ParseAdd(UserAgent);
+            // Load the image from the url.
+            var client = new HttpClientEx();
+            var bytes = await client.GetByteArrayAsync(Thumbnail!.Source);
+            var stream = new MemoryStream(bytes);
 
-                var bytes = await client.GetByteArrayAsync(Thumbnail!.Source);
-                var s = new MemoryStream(bytes);
-                Image = new Bitmap(s);
-            }
-            catch { }
+            return new Bitmap(stream);
         }
     }
 

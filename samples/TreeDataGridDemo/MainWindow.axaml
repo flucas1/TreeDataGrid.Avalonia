@@ -1,4 +1,4 @@
-<Window xmlns="https://github.com/avaloniaui"
+﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -142,7 +142,7 @@
         <TreeDataGrid Name="wikipedia" Source="{Binding Wikipedia.Source}">
           <TreeDataGrid.Resources>
             <DataTemplate x:Key="WikipediaImageCell" DataType="m:OnThisDayArticle">
-              <Image Source="{Binding Image}"/>
+              <Image Source="{Binding Image^}"/>
             </DataTemplate>
           </TreeDataGrid.Resources>
         </TreeDataGrid>

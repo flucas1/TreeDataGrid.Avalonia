@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -9,6 +8,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Media;
 using TreeDataGridDemo.Models;
+using TreeDataGridDemo.Utils;
 
 namespace TreeDataGridDemo.ViewModels
 {
@@ -43,14 +43,12 @@ namespace TreeDataGridDemo.ViewModels
         {
             try
             {
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.Add("User-Agent", nameof(TreeDataGridDemo));
-
+                var client = new HttpClientEx();
                 var d = DateTimeOffset.Now.Day;
                 var m = DateTimeOffset.Now.Month;
                 var uri = $"https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{m:00}/{d:00}";
-                var s = await client.GetStringAsync(uri);
-                var data = JsonSerializer.Deserialize(s, OnThisDayJsonContext.Default.OnThisDay);
+                var json = await client.GetStringAsync(uri);
+                var data = JsonSerializer.Deserialize(json, OnThisDayJsonContext.Default.OnThisDay);
 
                 if (data?.Selected is not null)
                     _data.AddRange(data.Selected.SelectMany(x => x.Pages!));

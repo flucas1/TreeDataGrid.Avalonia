@@ -13,6 +13,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ReactiveUI;
 using TreeDataGridDemo.Models;
+using TreeDataGridDemo.Utils;
 
 namespace TreeDataGridDemo.ViewModels
 {

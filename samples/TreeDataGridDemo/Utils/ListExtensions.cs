@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDataGridDemo
+namespace TreeDataGridDemo.Utils
 {
     internal static class ListExtensions
     {
