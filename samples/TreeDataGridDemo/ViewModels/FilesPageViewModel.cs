@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reactive.Linq;
 using System.Runtime.InteropServices;
 using Avalonia.Controls;
+using Avalonia.Controls.Models;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Selection;
 using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using ReactiveUI;
 using TreeDataGridDemo.Models;
 using TreeDataGridDemo.Utils;
 
 namespace TreeDataGridDemo.ViewModels
 {
-    public class FilesPageViewModel : ReactiveObject
+    public class FilesPageViewModel : NotifyingBase
     {
         private static IconConverter? s_iconConverter;
         private readonly HierarchicalTreeDataGridSource<FileTreeNodeModel>? _treeSource;
@@ -43,16 +42,19 @@ namespace TreeDataGridDemo.ViewModels
 
             _source = _treeSource = CreateTreeSource();
 
-            this.WhenAnyValue(x => x.SelectedDrive)
-                .Subscribe(x =>
+            this.PropertyChanged += (_, e) =>
+            {
+                if (e.PropertyName == nameof(SelectedDrive))
                 {
                     _root = new FileTreeNodeModel(_selectedDrive, isDirectory: true, isRoot: true);
 
                     if (_treeSource is not null)
-                        _treeSource.Items = new[] { _root };
-                    else if (_flatSource is not null)
-                        _flatSource.Items = _root.Children;
-                });
+                        _treeSource.Items = [_root];
+                    else
+                        _flatSource?.Items = _root.Children;
+
+                }
+            };
         }
 
         public bool CellSelection

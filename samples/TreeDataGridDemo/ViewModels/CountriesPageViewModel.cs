@@ -1,14 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Avalonia.Controls;
+using Avalonia.Controls.Models;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Selection;
-using ReactiveUI;
 using TreeDataGridDemo.Models;
 
 namespace TreeDataGridDemo.ViewModels
 {
-    internal class CountriesPageViewModel : ReactiveObject
+    internal class CountriesPageViewModel : NotifyingBase
     {
         private readonly ObservableCollection<Country> _data;
         private bool _cellSelection;

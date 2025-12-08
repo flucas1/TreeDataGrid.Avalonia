@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using Avalonia.Controls.Models;
 using Avalonia.Threading;
-using ReactiveUI;
 
 namespace TreeDataGridDemo.Models
 {
-    public class FileTreeNodeModel : ReactiveObject, IEditableObject
+    public class FileTreeNodeModel : NotifyingBase, IEditableObject
     {
         private string _path;
         private string _name;

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using ReactiveUI;
+using Avalonia.Controls.Models;
 
 namespace TreeDataGridDemo.Models
 {
-    public class DragDropItem : ReactiveObject
+    public class DragDropItem : NotifyingBase
     {
         private static Random _random = new Random(0);
         private ObservableCollection<DragDropItem>? _children;
